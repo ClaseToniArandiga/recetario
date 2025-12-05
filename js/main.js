@@ -4,6 +4,9 @@ import { cambiarImagenBanner } from './banner.js';
 // Cambiar imagen del banner cuando se carga la página
 window.addEventListener("load", cambiarImagenBanner);
 
+
+
+// MENÚ DESPLEGABLE PARA MOBILE - DEBE IR EN UN ARCHIVO JS APARTE Y SER IMPORTADA??
 // 1. Encuentra el botón por su id
 const btnMenu = document.getElementById('btn-menu');
 
