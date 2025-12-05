@@ -14,11 +14,22 @@ class CardDetalles {
         this.tituloReceta.textContent = receta.nombre;
         
         this.listaIngredientes.innerHTML = '';
-        receta.ingredientes.forEach(ing => {
-            const li = document.createElement('li');
-            li.textContent = ing;
-            this.listaIngredientes.appendChild(li);
-        });
+        receta.ingredientes.forEach((ing, index) => {
+    const li = document.createElement('li');
+    
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = `ingrediente-${index}`;
+    checkbox.name = `ingrediente-${index}`;
+    
+    const label = document.createElement('label');
+    label.htmlFor = `ingrediente-${index}`;
+    label.textContent = ing;
+    
+    li.appendChild(checkbox);
+    li.appendChild(label);
+    this.listaIngredientes.appendChild(li);
+});
 
         this.cardCalorico.innerHTML = `
             <h3>Información Nutricional</h3>
