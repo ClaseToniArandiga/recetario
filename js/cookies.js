@@ -1,3 +1,5 @@
+
+
 // 1. Encuentra el botón por su id
 const btnMenu = document.getElementById('btn-menu');
 
