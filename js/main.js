@@ -1,3 +1,9 @@
+// IMPORTACIONES DE OTROS MÓDULOS DE JS
+import { cambiarImagenBanner } from './banner.js';
+
+// Cambiar imagen del banner cuando se carga la página
+window.addEventListener("load", cambiarImagenBanner);
+
 // 1. Encuentra el botón por su id
 const btnMenu = document.getElementById('btn-menu');
 
