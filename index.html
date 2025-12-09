@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <!-- Rellenar etiquetas después del 'Informe de SEO' -->
-        <!-- Configuración básica -->
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Nombre de Tu Empresa | Descripción Principal del Negocio</title>
-        <meta name="description" content="Descripción detallada de tu empresa o servicio en 150-160 caracteres. Incluye palabras clave relevantes y call to action." />
-        <meta name="keywords" content="palabra clave 1, palabra clave 2, palabra clave 3" />
-        <meta name="author" content="Toni Ferrà" />
-        <link rel="canonical" href="https://www.tudominio.com" />
 
-        <!-- Favicon y iconos para diferentes dispositivos -->
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+<head>
+    <!-- Rellenar etiquetas después del 'Informe de SEO' -->
+    <!-- Configuración básica -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Nombre de Tu Empresa | Descripción Principal del Negocio</title>
+    <meta name="description"
+        content="Descripción detallada de tu empresa o servicio en 150-160 caracteres. Incluye palabras clave relevantes y call to action." />
+    <meta name="keywords" content="palabra clave 1, palabra clave 2, palabra clave 3" />
+    <meta name="author" content="Toni Ferrà" />
+    <link rel="canonical" href="https://www.tudominio.com" />
 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.tudominio.com" />
-        <meta property="og:title" content="Título Atractivo para Compartir en Facebook" />
-        <meta property="og:description" content="Descripción atractiva para compartir en redes sociales. Debe ser concisa y llamativa." />
-        <meta property="og:image" content="https://www.tudominio.com/img/og-image.jpg" />
-        <meta property="og:image:alt" content="Descripción de la imagen para accesibilidad" />
+    <!-- Favicon y iconos para diferentes dispositivos -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
 
-        <!-- Twitter -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@tuusuario" />
-        <meta name="twitter:title" content="Título Atractivo para Compartir en Twitter" />
-        <meta name="twitter:description" content="Descripción atractiva para compartir en Twitter. Debe ser concisa y llamativa." />
-        <meta name="twitter:image" content="https://www.tudominio.com/img/twitter-image.jpg" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.tudominio.com" />
+    <meta property="og:title" content="Título Atractivo para Compartir en Facebook" />
+    <meta property="og:description"
+        content="Descripción atractiva para compartir en redes sociales. Debe ser concisa y llamativa." />
+    <meta property="og:image" content="https://www.tudominio.com/img/og-image.jpg" />
+    <meta property="og:image:alt" content="Descripción de la imagen para accesibilidad" />
 
-        <!-- SEO Avanzado -->
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta name="googlebot" content="index, follow" />
-        <script type="application/ld+json">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@tuusuario" />
+    <meta name="twitter:title" content="Título Atractivo para Compartir en Twitter" />
+    <meta name="twitter:description"
+        content="Descripción atractiva para compartir en Twitter. Debe ser concisa y llamativa." />
+    <meta name="twitter:image" content="https://www.tudominio.com/img/twitter-image.jpg" />
+
+    <!-- SEO Avanzado -->
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow" />
+    <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "Organization",
@@ -56,24 +60,26 @@
         }
         </script>
 
-        <!-- Seguridad -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:;" />
-        <meta name="referrer" content="no-referrer-when-downgrade" />
-        
-        <!-- Internacionalización -->
-        <link rel="alternate" hreflang="es" href="https://www.tudominio.com" />
-        <link rel="alternate" hreflang="en" href="https://www.tudominio.com/en/" />
-        <meta name="geo.region" content="ES" />
-        <meta name="geo.position" content="40.416775;-3.703790" />
+    <!-- Seguridad -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' https: data:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:;" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
 
-        <!-- Rendimiento y precarga -->
-        <link rel="preload" as="style" href="css/style.css" />
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
-    
-    <body>
+    <!-- Internacionalización -->
+    <link rel="alternate" hreflang="es" href="https://www.tudominio.com" />
+    <link rel="alternate" hreflang="en" href="https://www.tudominio.com/en/" />
+    <meta name="geo.region" content="ES" />
+    <meta name="geo.position" content="40.416775;-3.703790" />
 
-        <!--
+    <!-- Rendimiento y precarga -->
+    <link rel="preload" as="style" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cookies.css" />
+</head>
+
+<body>
+
+    <!--
         ..######...#######...#######..##....##.####.########..######.
         .##....##.##.....##.##.....##.##...##...##..##.......##....##
         .##.......##.....##.##.....##.##..##....##..##.......##......
@@ -83,165 +89,131 @@
         ..######...#######...#######..##....##.####.########..######.
         -->
 
-                <!-- <section class="cookie-preferences">
-            <form action="#" method="get" class="cookies-form">
-                <article class="cookies-header">
-                    <h2>Datos para mejorar tu experiencia</h2>
+    <section class="cookie-preferences" style="display: none;">
+        <form action="#" method="get" class="cookies-form">
+            <article class="cookies-header">
+                <h2>Datos para mejorar tu experiencia</h2>
 
-                    <section class="cookies-description">
-                        <p>
-                            Para mejorar tu experiencia en nuestras plataformas
-                            y poder mostrarte información más relevante,
-                            utilizamos cookies y tecnologías similares, tanto
-                            propiedad de Nike como de terceros, así como datos
-                            enviados directamente desde nuestros servidores.
-                            Puedes modificar lo que quieras en cualquier momento
-                            en la sección "Privacidad" de la configuración de tu
-                            cuenta o haciendo clic en el enlace "Configuración
-                            de privacidad y cookies" que verás en la parte
-                            inferior de Nike.com. Para más información, consulta
-                            nuestra
-                            <a href="#">Política de privacidad y cookies</a>.
-                        </p>
-                        <p>
-                            Estrictamente necesarias (siempre activado) Permitir
-                            las funcionalidades principales para desplegar tu
-                            idioma, ubicación y cesta. También contribuye a la
-                            seguridad, la gestión de red y la accesibilidad.
-                        </p>
-                    </section>
-                </article>
-
-                <section class="cookies-options">
-                    <hr />
+                <section class="cookies-description">
                     <p>
-                        Permitir el uso de datos de comportamiento para
-                        optimizar el rendimiento, revisar cómo interactúas con
-                        nuestros sitios web y aplicaciones, y mejorar las
-                        experiencias de Nike.
+                        Para mejorar tu experiencia en nuestras plataformas
+                        y poder mostrarte información más relevante,
+                        utilizamos cookies y tecnologías similares, tanto
+                        propiedad de Nike como de terceros, así como datos
+                        enviados directamente desde nuestros servidores.
+                        Puedes modificar lo que quieras en cualquier momento
+                        en la sección "Privacidad" de la configuración de tu
+                        cuenta o haciendo clic en el enlace "Configuración
+                        de privacidad y cookies" que verás en la parte
+                        inferior de Nike.com. Para más información, consulta
+                        nuestra
+                        <a href="#">Política de privacidad y cookies</a>.
                     </p>
-                    <div class="cookie-controls">
-                        <label class="radio-control">
-                            <input
-                                type="radio"
-
-                                name="performance"
-                                value="accept"
-                            />
-                            <span class="radio-label">Aceptar</span>
-                        </label>
-                        <label class="radio-control">
-                            <input
-                                type="radio"
-
-                                name="performance"
-                                value="reject"
-                            />
-                            <span class="radio-label">Rechazar</span>
-                        </label>
-                    </div>
-
-                    <hr />
                     <p>
-                        Mediante cookies y otras tecnologías se permite el uso
-                        de datos de comportamiento para mejorar tu experiencia y
-                        ofrecerte contenido relevante en las plataformas y
-                        comunicaciones de Nike.
+                        Estrictamente necesarias (siempre activado) Permitir
+                        las funcionalidades principales para desplegar tu
+                        idioma, ubicación y cesta. También contribuye a la
+                        seguridad, la gestión de red y la accesibilidad.
                     </p>
-                    <div class="cookie-controls">
-                        <label class="radio-control">
-                            <input
-                                type="radio"
-                                name="experiences"
-                                value="accept"
-                            />
-                            <span class="radio-label">Aceptar</span>
-                        </label>
-                        <label class="radio-control">
-                            <input
-                                type="radio"
-                                name="experiences"
-                                value="reject"
-                            />
-                            <span class="radio-label">Rechazar</span>
-                        </label>
-                    </div>
-
-                    <hr />
-                    <p>
-                        Permitir compartir datos de comportamiento con socios
-                        publicitarios. Estos datos se utilizan para mejorar e
-                        informar sobre la experiencia de publicidad
-                        personalizada en los sitios de nuestros socios
-                        publicitarios.
-                    </p>
-                    <div class="cookie-controls">
-                        <label class="radio-control">
-                            <input
-                                type="radio"
-                                name="advertising"
-                                value="accept"
-                            />
-                            <span class="radio-label">Aceptar</span>
-                        </label>
-                        <label class="radio-control">
-                            <input
-                                type="radio"
-                                name="advertising"
-                                value="reject"
-                            />
-                            <span class="radio-label">Rechazar</span>
-                        </label>
-                    </div>
-
-                    <hr />
-                    <p>
-                        Permitir compartir tu dirección de correo electrónico y
-                        número de teléfono con socios publicitarios para
-                        personalizar la publicidad en función de tus intereses y
-                        medir la eficacia de la publicidad en sitios de nuestros
-                        socios publicitarios.
-                    </p>
-                    <div class="cookie-controls">
-                        <label class="radio-control">
-                            <input
-                                type="radio"
-                                name="profile-advertising"
-                                value="accept"
-                            />
-                            <span class="radio-label">Aceptar</span>
-                        </label>
-                        <label class="radio-control">
-                            <input
-                                type="radio"
-                                name="profile-advertising"
-                                value="reject"
-                            />
-                            <span class="radio-label">Rechazar</span>
-                        </label>
-                    </div>
                 </section>
+            </article>
 
-                <div class="form-controls">
-                    <button type="submit" class="cuardar-preferencias">
-                        Guardar preferencias
-                    </button>
+            <section class="cookies-options">
+                <hr />
+                <p>
+                    Permitir el uso de datos de comportamiento para
+                    optimizar el rendimiento, revisar cómo interactúas con
+                    nuestros sitios web y aplicaciones, y mejorar las
+                    experiencias de Nike.
+                </p>
+                <div class="cookie-controls">
+                    <label class="radio-control">
+                        <input type="radio" name="performance" value="accept" />
+                        <span class="radio-label">Aceptar</span>
+                    </label>
+                    <label class="radio-control">
+                        <input type="radio" name="performance" value="reject" />
+                        <span class="radio-label">Rechazar</span>
+                    </label>
                 </div>
-                <section class="footer_buttons">
-                    <button type="button" class="aceptar-todo">
-                        Aceptar todas las cookies
-                    </button>
-                    <button type="button" class="rechazar-todo">
-                        Rechazar todas las cookies
-                    </button>
-                </section>
-            </form>
-        </section> -->
+
+                <hr />
+                <p>
+                    Mediante cookies y otras tecnologías se permite el uso
+                    de datos de comportamiento para mejorar tu experiencia y
+                    ofrecerte contenido relevante en las plataformas y
+                    comunicaciones de Nike.
+                </p>
+                <div class="cookie-controls">
+                    <label class="radio-control">
+                        <input type="radio" name="experiences" value="accept" />
+                        <span class="radio-label">Aceptar</span>
+                    </label>
+                    <label class="radio-control">
+                        <input type="radio" name="experiences" value="reject" />
+                        <span class="radio-label">Rechazar</span>
+                    </label>
+                </div>
+
+                <hr />
+                <p>
+                    Permitir compartir datos de comportamiento con socios
+                    publicitarios. Estos datos se utilizan para mejorar e
+                    informar sobre la experiencia de publicidad
+                    personalizada en los sitios de nuestros socios
+                    publicitarios.
+                </p>
+                <div class="cookie-controls">
+                    <label class="radio-control">
+                        <input type="radio" name="advertising" value="accept" />
+                        <span class="radio-label">Aceptar</span>
+                    </label>
+                    <label class="radio-control">
+                        <input type="radio" name="advertising" value="reject" />
+                        <span class="radio-label">Rechazar</span>
+                    </label>
+                </div>
+
+                <hr />
+                <p>
+                    Permitir compartir tu dirección de correo electrónico y
+                    número de teléfono con socios publicitarios para
+                    personalizar la publicidad en función de tus intereses y
+                    medir la eficacia de la publicidad en sitios de nuestros
+                    socios publicitarios.
+                </p>
+                <div class="cookie-controls">
+                    <label class="radio-control">
+                        <input type="radio" name="profile-advertising" value="accept" />
+                        <span class="radio-label">Aceptar</span>
+                    </label>
+                    <label class="radio-control">
+                        <input type="radio" name="profile-advertising" value="reject" />
+                        <span class="radio-label">Rechazar</span>
+                    </label>
+                </div>
+            </section>
+
+            <div class="form-controls">
+                <button type="submit" class="cuardar-preferencias">
+                    Guardar preferencias
+                </button>
+            </div>
+            <section class="footer_buttons">
+                <button type="button" class="aceptar-todo">
+                    Aceptar todas las cookies
+                </button>
+                <button type="button" class="rechazar-todo">
+                    Rechazar todas las cookies
+                </button>
+            </section>
+        </form>
+    </section>
 
 
 
 
-        <!--
+    <!--
         ..######...#######..##....##.########....###....####.##....##.########.########.
         .##....##.##.....##.###...##....##......##.##....##..###...##.##.......##.....##
         .##.......##.....##.####..##....##.....##...##...##..####..##.##.......##.....##
@@ -250,149 +222,146 @@
         .##....##.##.....##.##...###....##....##.....##..##..##...###.##.......##....##.
         ..######...#######..##....##....##....##.....##.####.##....##.########.##.....##
         -->
-        <div class="container">
-            <!-- Logo, menu de hamburguesa -->
-            <header class="header">
-                <!-- Logo -->
-                <a href="index.html" class="header__logo">
-                    <h1 class="header__logo-text">LOGO</h1>
-                </a>
+    <div class="container">
+        <!-- Logo, menu de hamburguesa -->
+        <header class="header">
+            <!-- Logo -->
+            <a href="index.html" class="header__logo">
+                <h1 class="header__logo-text">LOGO</h1>
+            </a>
 
-                <!-- para Desktop -->
-                <section class="header__desktop">
-                    <ul class="header__menuhtml">
-                        <li class="header__item">
-                            <a class="header__link" href="#">Servicios</a>
-                        </li>
-                        <li class="header__item">
-                            <a class="header__link" href="#">Galeria</a>
-                        </li>
-                        <li class="header__item">
-                            <a class="header__link" href="#">Contacto</a>
-                        </li>
-                    </ul>
-                    <!-- Redes la podéis mover al footer si es necesario -->
-                    <ul class="redes">
-                        <li class="redes__facebook">Facebook</li>
-                        <li class="redes__linkedin">Linkedin</li>
-                    </ul>
-                    <!-- <ul class="idiomas">
+            <!-- para Desktop -->
+            <section class="header__desktop">
+                <ul class="header__menuhtml">
+                    <li class="header__item">
+                        <a class="header__link" href="#">Servicios</a>
+                    </li>
+                    <li class="header__item">
+                        <a class="header__link" href="#">Galeria</a>
+                    </li>
+                    <li class="header__item">
+                        <a class="header__link" href="#">Contacto</a>
+                    </li>
+                </ul>
+                <!-- Redes la podéis mover al footer si es necesario -->
+                <ul class="redes">
+                    <li class="redes__facebook">Facebook</li>
+                    <li class="redes__linkedin">Linkedin</li>
+                </ul>
+                <!-- <ul class="idiomas">
                         <li>Español</li>
                         <li>Inglés</li>
                     </ul> -->
+            </section>
+
+            <!-- Menu de hamburguesa, clic con JS -->
+            <img class="header__menu" src="img/svg/menu.svg" alt="icono menu" id="btn-menu" />
+            <!-- menu desplegable -->
+        </header>
+        <nav class="desplegable" style="display: none;" id="nav">
+            <ul class="desplegable__list">
+                <li class="desplegable__item">
+                    <a class="desplegable__link" href="#">Item 1</a>
+                </li>
+                <li class="desplegable__item">
+                    <a class="desplegable__link" href="#">Item 2</a>
+                </li>
+                <li class="desplegable__item">
+                    <a class="desplegable__link" href="#">Item 3</a>
+                </li>
+                <li class="desplegable__item">
+                    <a class="desplegable__link" href="#">Item 4</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal -->
+        <main class="main"></main>
+
+        <footer class="footer">
+            <section class="footer__container">
+                <!-- Información de la empresa -->
+                <section class="footer__section footer__company">
+                    <h2 class="footer__title">Nombre Empresa</h2>
+                    <address class="footer__address">
+                        <h3>Calle Principal, 123</h3>
+                        <h3>Ciudad, CP 12345</h3>
+                        <h3>Tel: <a href="tel:+34900000000" class="footer__link">900 000 000</a></h3>
+                        <h3>Email: <a href="mailto:info@empresa.com" class="footer__link">info@empresa.com</a></h3>
+                    </address>
                 </section>
 
-                <!-- Menu de hamburguesa, clic con JS -->
-                <img 
-                    class="header__menu"
-                    src="img/svg/menu.svg"
-                    alt="icono menu"
-                    id="btn-menu"
-                />
-                <!-- menu desplegable -->
-            </header>
-            <nav class="desplegable" style="display: none;" id="nav">
-                <ul class="desplegable__list">
-                    <li class="desplegable__item">
-                        <a class="desplegable__link" href="#">Item 1</a>
-                    </li>
-                    <li class="desplegable__item">
-                        <a class="desplegable__link" href="#">Item 2</a>
-                    </li>
-                    <li class="desplegable__item">
-                        <a class="desplegable__link" href="#">Item 3</a>
-                    </li>
-                    <li class="desplegable__item">
-                        <a class="desplegable__link" href="#">Item 4</a>
-                    </li>
-                </ul>
-            </nav>
+                <!-- Enlaces de navegación -->
+                <nav class="footer__section footer__nav">
+                    <h4 class="footer__title">Navegación</h4>
+                    <ul class="footer__nav-list">
+                        <li class="footer__nav-item">
+                            <a href="#" class="footer__nav-link">Servicios</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="#" class="footer__nav-link">Galería</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="#" class="footer__nav-link">Contacto</a>
+                        </li>
+                    </ul>
+                </nav>
 
-            <!-- Contenido principal -->
-            <main class="main"></main>
-
-            <footer class="footer">
-                <section class="footer__container">
-                    <!-- Información de la empresa -->
-                    <section class="footer__section footer__company">
-                        <h2 class="footer__title">Nombre Empresa</h2>
-                        <address class="footer__address">
-                            <h3>Calle Principal, 123</h3>
-                            <h3>Ciudad, CP 12345</h3>
-                            <h3>Tel: <a href="tel:+34900000000" class="footer__link">900 000 000</a></h3>
-                            <h3>Email: <a href="mailto:info@empresa.com" class="footer__link">info@empresa.com</a></h3>
-                        </address>
-                    </section>
-
-                    <!-- Enlaces de navegación -->
-                    <nav class="footer__section footer__nav">
-                        <h4 class="footer__title">Navegación</h4>
-                        <ul class="footer__nav-list">
-                            <li class="footer__nav-item">
-                                <a href="#" class="footer__nav-link">Servicios</a>
-                            </li>
-                            <li class="footer__nav-item">
-                                <a href="#" class="footer__nav-link">Galería</a>
-                            </li>
-                            <li class="footer__nav-item">
-                                <a href="#" class="footer__nav-link">Contacto</a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <!-- Legal y privacidad -->
-                    <section class="footer__section footer__legal">
-                        <h4 class="footer__title">Legal</h4>
-                        <ul class="footer__legal-list">
-                            <li class="footer__legal-item">
-                                <a href="#" class="footer__link">Aviso Legal</a>
-                            </li>
-                            <li class="footer__legal-item">
-                                <a href="#" class="footer__link">Política de Privacidad</a>
-                            </li>
-                            <li class="footer__legal-item">
-                                <a href="#" class="footer__link">Política de Cookies</a>
-                            </li>
-                            <li class="footer__legal-item">
-                                <a href="#" class="footer__link">Términos y Condiciones</a>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <!-- Redes sociales -->
-                    <section class="footer__section footer__social">
-                        <h4 class="footer__title">Síguenos</h4>
-                        <ul class="footer__social-list">
-                            <li class="footer__social-item">
-                                <a href="#" class="footer__social-link" aria-label="Facebook">
-                                    Facebook
-                                </a>
-                            </li>
-                            <li class="footer__social-item">
-                                <a href="#" class="footer__social-link" aria-label="LinkedIn">
-                                    LinkedIn
-                                </a>
-                            </li>
-                        </ul>
-                    </section>
+                <!-- Legal y privacidad -->
+                <section class="footer__section footer__legal">
+                    <h4 class="footer__title">Legal</h4>
+                    <ul class="footer__legal-list">
+                        <li class="footer__legal-item">
+                            <a href="#" class="footer__link">Aviso Legal</a>
+                        </li>
+                        <li class="footer__legal-item">
+                            <a href="#" class="footer__link">Política de Privacidad</a>
+                        </li>
+                        <li class="footer__legal-item">
+                            <a href="#" class="footer__link">Política de Cookies</a>
+                        </li>
+                        <li class="footer__legal-item">
+                            <a href="#" class="footer__link">Términos y Condiciones</a>
+                        </li>
+                    </ul>
                 </section>
 
-                <!-- Copyright y cookies banner -->
-                <section class="footer__bottom">
-                    <article class="footer__copy">
-                        <p>&copy; 2025 Nombre Empresa. Todos los derechos reservados.</p>
-                    </article>
-                    <article class="footer__cookies-banner" id="cookies-banner">
-                        <p class="footer__cookies-text">
-                            Utilizamos cookies propias.
-                            <a href="#" class="footer__link">Más información</a>
-                        </p>
-                    </article>
+                <!-- Redes sociales -->
+                <section class="footer__section footer__social">
+                    <h4 class="footer__title">Síguenos</h4>
+                    <ul class="footer__social-list">
+                        <li class="footer__social-item">
+                            <a href="#" class="footer__social-link" aria-label="Facebook">
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="#" class="footer__social-link" aria-label="LinkedIn">
+                                LinkedIn
+                            </a>
+                        </li>
+                    </ul>
                 </section>
-            </footer>
-        </div>
+            </section>
 
-        <!-- Un código en JavaScript, que nos ayuda hacer un clic -->
-        <script src="js/main.js"></script>
-    </body>
+            <!-- Copyright y cookies banner -->
+            <section class="footer__bottom">
+                <article class="footer__copy">
+                    <p>&copy; 2025 Nombre Empresa. Todos los derechos reservados.</p>
+                </article>
+                <article class="footer__cookies-banner" id="cookies-banner">
+                    <p class="footer__cookies-text">
+                        Utilizamos cookies propias.
+                        <a href="#" class="footer__link">Más información</a>
+                    </p>
+                </article>
+            </section>
+        </footer>
+    </div>
+
+    <!-- Un código en JavaScript, que nos ayuda hacer un clic -->
+    <script src="js/cookies.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>
