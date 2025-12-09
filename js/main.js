@@ -5,6 +5,8 @@ class CardDetalles {
         this.listaIngredientes = document.getElementById('ingredientes-lista');
         this.cardCalorico = document.querySelector('.card__calorico');
         this.tituloReceta = document.getElementById('titulo-receta');
+        this.personasActuales = 1;
+        this.recetaActual = null;
     }
 
     mostrar(receta) {
@@ -12,32 +14,63 @@ class CardDetalles {
         this.imagen.src = receta.imagen;
         this.imagen.alt = receta.nombre;
         this.tituloReceta.textContent = receta.nombre;
+        this.recetaActual = receta;
+        this.personasActuales = 1;
         
+        // Resetear contador visual
+        document.getElementById('personas-cantidad').textContent = '1';
+        
+        this.actualizarIngredientes();
+        this.actualizarCalorias();
+    }
+
+    actualizarIngredientes() {
         this.listaIngredientes.innerHTML = '';
-        receta.ingredientes.forEach((ing, index) => {
-    const li = document.createElement('li');
-    
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.id = `ingrediente-${index}`;
-    checkbox.name = `ingrediente-${index}`;
-    
-    const label = document.createElement('label');
-    label.htmlFor = `ingrediente-${index}`;
-    label.textContent = ing;
-    
-    li.appendChild(checkbox);
-    li.appendChild(label);
-    this.listaIngredientes.appendChild(li);
-});
+        this.recetaActual.ingredientes.forEach((ing, index) => {
+            const li = document.createElement('li');
+            
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.id = `ingrediente-${index}`;
+            checkbox.name = `ingrediente-${index}`;
+            
+            const label = document.createElement('label');
+            label.htmlFor = `ingrediente-${index}`;
+            label.textContent = this.multiplicarCantidad(ing, this.personasActuales);
+            
+            li.appendChild(checkbox);
+            li.appendChild(label);
+            this.listaIngredientes.appendChild(li);
+        });
+    }
 
+    multiplicarCantidad(ingrediente, multiplicador) {
+        // Buscar números al inicio del string (ej: "300g", "1 litro", "100g")
+        return ingrediente.replace(/^(\d+\.?\d*)/, (match) => {
+            const numero = parseFloat(match);
+            return (numero * multiplicador).toString();
+        });
+    }
 
+    cambiarPersonas(delta) {
+        const nuevaCantidad = this.personasActuales + delta;
+        if (nuevaCantidad >= 1 && nuevaCantidad <= 20) {
+            this.personasActuales = nuevaCantidad;
+            document.getElementById('personas-cantidad').textContent = nuevaCantidad;
+            this.actualizarIngredientes();
+            this.actualizarCalorias();
+        }
+    }
+
+    actualizarCalorias() {
+        const receta = this.recetaActual;
+        const mult = this.personasActuales;
         this.cardCalorico.innerHTML = `
             <h3>Información Nutricional</h3>
-            <p>Calorías: ${receta.calorias} kcal</p>
-            <p>Proteínas: ${receta.proteinas} g</p>
-            <p>Grasas: ${receta.grasas} g</p>
-            <p>Carbohidratos: ${receta.carbohidratos} g</p>
+            <p>Calorías: ${receta.calorias * mult} kcal</p>
+            <p>Proteínas: ${receta.proteinas * mult} g</p>
+            <p>Grasas: ${receta.grasas * mult} g</p>
+            <p>Carbohidratos: ${receta.carbohidratos * mult} g</p>
         `;
     }
 
@@ -184,6 +217,26 @@ function mostrarDetallesReceta(nombreReceta) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Prueba inicial mostrando la Paella de Mariscos
     mostrarDetallesReceta('Paella de Mariscos Auténtica');
+
+    // Event listeners para el contador de personas
+    document.getElementById('btn-sumar').addEventListener('click', () => {
+        cardDetalles.cambiarPersonas(1);
+    });
+
+    document.getElementById('btn-restar').addEventListener('click', () => {
+        cardDetalles.cambiarPersonas(-1);
+    });
+
+    // Al hacer clic en una receta, mostrar los detalles
+    // const recetaCards = document.querySelectorAll('.receta-card');
+    
+    // recetaCards.forEach(card => {
+    //     card.addEventListener('click', () => {
+    //         const nombreReceta = card.dataset.receta;
+    //         mostrarDetallesReceta(nombreReceta);
+    //     });
+    // });
 });
 

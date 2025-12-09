@@ -63,8 +63,17 @@
             <h2 class="titulo__receta" id="titulo-receta">Paella de Mariscos Auténtica</h2>
             <!-- Ingredientes -->
             <div id="div-ingrediente" class="card__detalles-ingredientes">
-                <h3>Ingredientes</h3>
-                <!-- Contador Personas -->
+                <div class="ingredientes__header">
+                    <h3>Ingredientes</h3>
+                    <div class="contador-personas">
+                        <button class="contador-btn" id="btn-restar">-</button>
+                        <span class="contador-valor">
+                            <span id="personas-cantidad">1</span>
+                            <span class="contador-label">PERS</span>
+                        </span>
+                        <button class="contador-btn" id="btn-sumar">+</button>
+                    </div>
+                </div>
                 <!-- Ingredientes -->
                 <ul id="ingredientes-lista" class="ingredientes__lista">
                 <!-- hacme un li con un checkbox -->
