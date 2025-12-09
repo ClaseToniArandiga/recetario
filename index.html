@@ -56,55 +56,44 @@
         <!-- HEADER -->
 
         <!-- MAIN -->
-        <div id="card-detalles" class="card__detalles">
-            <!-- IMG -->
-            <img src="#" alt="#" class="card__detalles-imagen" />
-            <button class="btn__cerrar--detalles" id="btn-cerrar-detalles">Cerrar</button>
-            <h2 class="titulo__receta" id="titulo-receta">Paella de Mariscos Auténtica</h2>
-            <!-- Ingredientes -->
-            <div id="div-ingrediente" class="card__detalles-ingredientes">
-                <div class="ingredientes__header">
-                    <h3>Ingredientes</h3>
-                    <div class="contador-personas">
-                        <button class="contador-btn" id="btn-restar">-</button>
-                        <span class="contador-valor">
-                            <span id="personas-cantidad">1</span>
-                            <span class="contador-label">PERS</span>
-                        </span>
-                        <button class="contador-btn" id="btn-sumar">+</button>
-                    </div>
-                </div>
-                <!-- Ingredientes -->
-                <ul id="ingredientes-lista" class="ingredientes__lista">
-                <!-- hacme un li con un checkbox -->
-
+        <main class="recetas-container">
+            <h1 class="recetas-titulo">Nuestras Recetas</h1>
+            
+            <!-- 
+                PARA PAU:
+                Aquí va el grid de recetas. Cada card debe tener:
+                - La clase "receta-card" para que funcione el click
+                - El atributo data-receta="Nombre exacto de la receta" (debe coincidir con el nombre en main.js)
                 
+                Recetas disponibles:
+                - "Paella de Mariscos Auténtica"
+                - "Tacos al Pastor"
+                - "Tiramisú Clásico Italiano"
+                - "Gazpacho Andaluz Tradicional"
+                - "Salmón Grilado con Espárragos"
+                - "Tostada de Aguacate y Huevo Poché"
                 
-                    
-
+                Ejemplo de card:
+            -->
+            <div class="recetas-grid">
+                <!-- Card de ejemplo - duplicar para cada receta -->
+                <article class="receta-card" data-receta="Paella de Mariscos Auténtica">
+                    <img src="img/paella-mariscos.avif" alt="Paella de Mariscos" class="receta-card__imagen">
+                    <h2 class="receta-card__titulo">Paella de Mariscos Auténtica</h2>
+                </article>
                 
-                </ul>
-                <!-- Card Calorico -->
-                <div class="card__calorico">
-
-                </div>
+                <!-- Añadir más cards aquí... -->
             </div>
-            <!-- Instrucciones -->
-            <div class="card__detalles-instrucciones">
-            <h3>Instrucciones</h3>
-            <ol class="instrucciones__lista">
-                <li>Primer paso...</li>
-                <li>Segundo paso...</li>
-            </ol>
-            </div>
+        </main>
 
-        </div>
+        <!-- Banner de detalles (se genera dinámicamente con JS) -->
+        <div id="banner-overlay" class="banner-overlay"></div>
 
 
 
         <!-- FOOTER -->
 
-        <!-- Un código en JavaScript, que nos ayuda hacer un clic -->
+        <!-- JAVASCRIPT -->
         <script src="js/main.js"></script>
     </body>
 </html>
