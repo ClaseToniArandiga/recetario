@@ -64,7 +64,7 @@ function mostrarDetalles(receta) {
 
 const paellaMariscos = {
     nombre: 'Paella de Mariscos Auténtica',
-    imagen: 'img/paella-mariscos.jpg',
+    imagen: 'img/paella-mariscos.avif',
     ingredientes: [
         '300g de arroz bomba',
         '150g de camarones',
@@ -86,7 +86,7 @@ const paellaMariscos = {
 
 const tacosAlPastor = {
     nombre: 'Tacos al Pastor',
-    imagen: 'img/tacos-al-pastor.jpg',
+    imagen: 'img/tacos-al-pastor.avif',
     ingredientes: [
         '500g de carne de cerdo',
         '100g de piña',
@@ -103,7 +103,7 @@ const tacosAlPastor = {
 
 const tiramisuClasico = {
     nombre: 'Tiramisú Clásico Italiano',
-    imagen: 'img/tiramisu-clasico.jpg', 
+    imagen: 'img/tiramisu-clasico.avif', 
     ingredientes: [
         '250g de queso mascarpone',
         '200g de bizcochos de soletilla',
@@ -119,7 +119,7 @@ const tiramisuClasico = {
 };
 const gazpachoAndaluz = {
     nombre: 'Gazpacho Andaluz Tradicional',
-    imagen: 'img/gazpacho-andaluz.jpg',
+    imagen: 'img/gazpacho-andaluz.avif',
     ingredientes: [
         '1kg de tomates maduros',
         '1 pepino',
@@ -136,7 +136,7 @@ const gazpachoAndaluz = {
 };
 const salmonGrilado = {
     nombre: 'Salmón Grilado con Espárragos',
-    imagen: 'img/salmon-grilado.jpg',
+    imagen: 'img/salmon-grilado.avif',
     ingredientes: [
         '2 filetes de salmón',
         '200g de espárragos verdes',
@@ -151,7 +151,7 @@ const salmonGrilado = {
 };
 const tostadaAguacateHuevo = {
     nombre: 'Tostada de Aguacate y Huevo Poché',
-    imagen: 'img/tostada-aguacate-huevo.jpg',
+    imagen: 'img/tostada-aguacate-huevo.avif',
     ingredientes: [
         '2 rebanadas de pan integral',
         '1 aguacate maduro',

@@ -11,9 +11,9 @@
     grid-template-areas:
         "imagen imagen"
         "boton boton"
-        "titulo titulo"
         "ingredientes instrucciones";
     gap: 20px;
+    position: relative;
 }
 
 .card__detalles-imagen {
@@ -25,10 +25,14 @@
 }
 
 .titulo__receta {
-    grid-area: titulo;
+    grid-area: imagen;
+    align-self: end;
     font-size: 1.8rem;
     margin: 0;
-    color: #333;
+    padding: 15px;
+    color: #fff;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    border-radius: 0 0 8px 8px;
 }
 
 .btn__cerrar--detalles {
