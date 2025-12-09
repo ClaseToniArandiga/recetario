@@ -8,7 +8,7 @@ class CardDetalles {
     }
 
     mostrar(receta) {
-        this.card.style.display = 'block';
+        this.card.style.display = 'grid';
         this.imagen.src = receta.imagen;
         this.imagen.alt = receta.nombre;
         this.tituloReceta.textContent = receta.nombre;
