@@ -2,7 +2,7 @@
 @import url("normalize.css");
 @import url("reset.css");
 /* @import url('cookies.css'); */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
 
 /* =================================
    Variables y Tema (CSS 2025)
@@ -91,7 +91,6 @@ header {
   transition: color 0.3s ease;
 }
 
-
 /* Header - Formulario de búsqueda */
 .header__form-buscar {
   display: flex;
@@ -132,7 +131,6 @@ header {
     display: none;
   }
 }
-
 
 .main__text {
   color: var(--color-text);
@@ -234,7 +232,8 @@ header {
 .cuchilloCuchara {
   width: 20px;
   height: 20px;
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)
+    contrast(103%);
 }
 
 /* Responsive para el banner */
@@ -292,11 +291,6 @@ header {
 /* =================================
    MAIN Styles
    ================================= */
-
-
-
-
-
 
 /* =================================
    Footer Styles
