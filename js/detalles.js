@@ -31,6 +31,7 @@ class CardDetalles {
     this.listaIngredientes.appendChild(li);
 });
 
+
         this.cardCalorico.innerHTML = `
             <h3>Información Nutricional</h3>
             <p>Calorías: ${receta.calorias} kcal</p>
@@ -182,19 +183,7 @@ function mostrarDetallesReceta(nombreReceta) {
 }
 
 
-
-
-
-// al hacer clic en una receta, llamar a la función mostrarDetallesReceta con el nombre de la receta
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleccionar todas las cards
-    const cards = document.querySelectorAll('.card');
-    
-    // Añadir evento click a cada card
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            const nombreReceta = card.dataset.receta; // Obtiene el valor de data-receta
-            mostrarDetallesReceta(nombreReceta);
-        });
-    });
+    mostrarDetallesReceta('Paella de Mariscos Auténtica');
 });
+
