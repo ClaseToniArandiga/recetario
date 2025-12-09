@@ -65,12 +65,33 @@ class CardDetalles {
     actualizarCalorias() {
         const receta = this.recetaActual;
         const mult = this.personasActuales;
+        const caloriasTotal = receta.calorias * mult;
+        // Porcentaje de la barra (max 800 kcal = 100%)
+        const porcentaje = Math.min((caloriasTotal / 800) * 100, 100);
+        
         this.cardCalorico.innerHTML = `
-            <h3>Información Nutricional</h3>
-            <p>Calorías: ${receta.calorias * mult} kcal</p>
-            <p>Proteínas: ${receta.proteinas * mult} g</p>
-            <p>Grasas: ${receta.grasas * mult} g</p>
-            <p>Carbohidratos: ${receta.carbohidratos * mult} g</p>
+            <h3>Información Nutricional (por porción)</h3>
+            <div class="calorias-barra">
+                <span class="calorias-label">Calorías</span>
+                <div class="calorias-barra-container">
+                    <div class="calorias-barra-fill" style="width: ${porcentaje}%"></div>
+                </div>
+                <span class="calorias-valor">${caloriasTotal} kcal</span>
+            </div>
+            <div class="info-extra">
+                <div class="info-item">
+                    <span class="info-item-label">Dificultad</span>
+                    <span class="info-item-valor">${receta.dificultad}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">Tiempo</span>
+                    <span class="info-item-valor">${receta.tiempo}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-item-label">Puntuación</span>
+                    <span class="info-item-valor">${receta.puntuacion}/5</span>
+                </div>
+            </div>
         `;
     }
 
@@ -114,7 +135,10 @@ const paellaMariscos = {
     calorias: 450,
     proteinas: 30,
     grasas: 15,
-    carbohidratos: 50
+    carbohidratos: 50,
+    dificultad: 'Media',
+    tiempo: '80 min',
+    puntuacion: 4.8
 };
 
 const tacosAlPastor = {
@@ -131,7 +155,10 @@ const tacosAlPastor = {
     calorias: 300,
     proteinas: 25,
     grasas: 15,
-    carbohidratos: 20
+    carbohidratos: 20,
+    dificultad: 'Fácil',
+    tiempo: '45 min',
+    puntuacion: 4.6
 };
 
 const tiramisuClasico = {
@@ -148,7 +175,10 @@ const tiramisuClasico = {
     calorias: 450,
     proteinas: 8,
     grasas: 30,
-    carbohidratos: 35
+    carbohidratos: 35,
+    dificultad: 'Media',
+    tiempo: '30 min',
+    puntuacion: 4.9
 };
 const gazpachoAndaluz = {
     nombre: 'Gazpacho Andaluz Tradicional',
@@ -165,7 +195,10 @@ const gazpachoAndaluz = {
     calorias: 150,
     proteinas: 3,
     grasas: 10,
-    carbohidratos: 12
+    carbohidratos: 12,
+    dificultad: 'Fácil',
+    tiempo: '15 min',
+    puntuacion: 4.5
 };
 const salmonGrilado = {
     nombre: 'Salmón Grilado con Espárragos',
@@ -180,7 +213,10 @@ const salmonGrilado = {
     calorias: 350,
     proteinas: 40,
     grasas: 20,
-    carbohidratos: 5
+    carbohidratos: 5,
+    dificultad: 'Fácil',
+    tiempo: '25 min',
+    puntuacion: 4.7
 };
 const tostadaAguacateHuevo = {
     nombre: 'Tostada de Aguacate y Huevo Poché',
@@ -195,7 +231,10 @@ const tostadaAguacateHuevo = {
     calorias: 400,
     proteinas: 15,
     grasas: 25,
-    carbohidratos: 30
+    carbohidratos: 30,
+    dificultad: 'Fácil',
+    tiempo: '15 min',
+    puntuacion: 4.4
 };
 
 // funcion para mostrar la card de detalles con los datos de la receta seleccionada 
