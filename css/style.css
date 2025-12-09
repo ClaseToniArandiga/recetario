@@ -7,9 +7,10 @@
    Variables y Tema (CSS 2025)
    ================================= */
 :root {
-  /* Colores con modo oscuro automático */
   --color-bg: light-dark(#f5f5f5);
   --color-text: light-dark(#121212);
+  --color-text-white: #ffffff;
+  --color-primary: #d4812a;
 
   /* Tipografía moderna */
   --font-family-system: system-ui, "Segoe UI", Roboto, sans-serif;
@@ -26,15 +27,8 @@
 }
 
 /* =================================
-   Reset y Estilos Base
+   Estilo general
    ================================= */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
   font-family: var(--font-family-system);
@@ -97,9 +91,6 @@ header {
   transition: color 0.3s ease;
 }
 
-.header__link:hover {
-  color: #d4812a;
-}
 
 /* Header - Formulario de búsqueda */
 .header__form-buscar {
@@ -142,9 +133,9 @@ header {
   }
 }
 
+
 .main__text {
   color: var(--color-text);
-  margin-top: var(--space-md);
   line-height: 1.5;
 }
 
@@ -162,7 +153,6 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: var(--space-md);
 }
 
 /* Banner - Imagen de fondo */
@@ -192,7 +182,7 @@ header {
 .banner__subtitle {
   position: relative;
   z-index: 1;
-  color: #d4812a;
+  color: var(--color-primary);
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 2px;
@@ -203,7 +193,7 @@ header {
 .banner__title {
   position: relative;
   z-index: 1;
-  color: #fff;
+  color: var(--color-text-white);
   font-family: "Georgia", serif;
   font-size: 3rem;
   font-weight: bold;
@@ -295,13 +285,21 @@ header {
 }
 
 /* =================================
+   MAIN Styles
+   ================================= */
+
+
+
+
+
+
+/* =================================
    Footer Styles
    ================================= */
 
 /* Footer - Bloque */
 .footer {
   background-color: #1a1612;
-  margin-top: var(--space-bg);
   padding: var(--space-bg) var(--space-md);
 }
 
@@ -329,7 +327,7 @@ header {
   font-size: 2rem;
   font-style: italic;
   font-weight: bold;
-  color: #fff;
+  color: var(--color-text-white);
   margin-bottom: var(--space-md);
 }
 
@@ -366,7 +364,7 @@ header {
 /* Footer - Botón Suscribir */
 .footer__button {
   padding: 0.875rem 1.5rem;
-  background-color: #d4812a;
+  background-color: var(--color-primary);
   color: #fff;
   border: none;
   border-radius: 50px;
