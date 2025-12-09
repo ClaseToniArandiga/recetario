@@ -58,6 +58,60 @@
     border-radius: 8px;
 }
 
+/* CONTADOR DE PERSONAS */
+
+.ingredientes__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ingredientes__header h3 {
+    margin: 0;
+}
+
+.contador-personas {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.contador-btn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.contador-btn:hover {
+    color: #e74c3c;
+}
+
+.contador-valor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 40px;
+}
+
+#personas-cantidad {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.contador-label {
+    font-size: 0.6rem;
+    color: #999;
+}
+
 /* Instrucciones a la derecha */
 .card__detalles-instrucciones {
     grid-area: instrucciones;
@@ -75,6 +129,16 @@
 .ingredientes__lista li,
 .instrucciones__lista li {
     margin: 8px 0;
+}
+
+/* Tachar texto cuando el checkbox está marcado */
+.ingredientes__lista input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.ingredientes__lista label {
+    cursor: pointer;
 }
 
 .card__calorico {
