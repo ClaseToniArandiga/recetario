@@ -269,8 +269,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Al hacer clic en una receta, mostrar los detalles
+
+    // Para Pau: este código asume que tienes elementos con la clase 'receta-card' y un atributo data-receta con el nombre de la receta, en cada tarjeta de receta en tu HTML.
+    // Ejemplo:
+    // <div class="receta-card" data-receta="Paella de Mariscos Auténtica">...</div>
+    // <div class="receta-card" data-receta="Tacos al Pastor">...</div>
+    // etc..
+
     // const recetaCards = document.querySelectorAll('.receta-card');
-    
     // recetaCards.forEach(card => {
     //     card.addEventListener('click', () => {
     //         const nombreReceta = card.dataset.receta;
