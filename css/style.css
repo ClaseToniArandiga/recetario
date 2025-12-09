@@ -39,10 +39,6 @@
 body {
   font-family: var(--font-family-system);
   background-color: var(--color-bg);
-  color: var(--color-text);
-  padding: var(--space-md);
-  /* Habilita el modo oscuro automático del navegador */
-  color-scheme: light dark;
 }
 
 .container {
@@ -53,18 +49,21 @@ body {
 HEADER
 ================================= */
 
+
 .header {
   max-width: 1000px;
+  background-color: #fff; /* Fondo blanco fijo */
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: var(--space-md);
-  block-size: var(--header-height);
+  padding: var(--space-md) var(--space-sm) var(--space-sm) var(--space-sm);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .header__logo-img {
-  width: 200px;
+  width: 160px;
 }
 
 /* Header - Desktop (navegación + buscador) */
@@ -88,7 +87,7 @@ HEADER
 
 /* Header - Link del menú */
 .header__link {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -111,15 +110,13 @@ HEADER
   width: 14px;
   height: 14px;
   filter: invert(35%) sepia(10%) saturate(500%);
-
-
 }
 
 .header__input-buscar {
   border: none;
   background: transparent;
   outline: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   min-width: 150px;
 }
 
