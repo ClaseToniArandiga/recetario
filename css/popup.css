@@ -27,14 +27,14 @@
 
 /* ===== Card Detalles - Estilos con Grid ===== */
 .card__detalles {
-    max-width: 900px;
+    width: 90%;
     margin: 0 auto;
     padding: 20px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
     grid-template-areas:
         "imagen imagen"
         "boton boton"
@@ -66,18 +66,21 @@
 .btn__cerrar--detalles {
     grid-area: imagen;
     justify-self: end;
+    text-align: center;
     height: 50px;
+    width: 40px;
     margin:  10px 10px 0 0;
-    padding: 8px 16px;
-    background: #e74c3c;
-    color: #fff;
+    background: #eddedbf0;
+    color: black;
     border: none;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .btn__cerrar--detalles:hover {
-    background: #c0392b;
+    background: rgba(255, 255, 255, 0.852);
 }
 
 /* Ingredientes a la izquierda */
@@ -118,10 +121,14 @@
     font-size: 1.2rem;
     cursor: pointer;
     color: #666;
+    font-weight: bold;
 }
 
 .contador-btn:hover {
     color: #e74c3c;
+    /* fondo difuminado */
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: 50%;
 }
 
 .contador-valor {
@@ -152,23 +159,50 @@
 
 .ingredientes__lista,
 .instrucciones__lista {
-    padding-left: 20px;
+    padding-left: 0;
     margin: 10px 0;
+    list-style: none;
 }
 
 .ingredientes__lista li,
 .instrucciones__lista li {
-    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.ingredientes__lista li:last-child,
+.instrucciones__lista li:last-child {
+    border-bottom: none;
+}
+
+/* Checkbox personalizado */
+.ingredientes__lista input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #8BC34A;
+    flex-shrink: 0;
 }
 
 /* Tachar texto cuando el checkbox está marcado */
 .ingredientes__lista input[type="checkbox"]:checked + label {
     text-decoration: line-through;
-    color: #999;
+    color: #aaa;
 }
 
 .ingredientes__lista label {
     cursor: pointer;
+    line-height: 1.4;
+    flex: 1;
+    color: #555;
+}
+
+.ingredientes__lista label strong {
+    color: #333;
+    font-weight: 600;
 }
 
 .card__calorico {
