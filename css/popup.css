@@ -19,15 +19,16 @@
     background: rgba(0, 0, 0, 0.7);
     z-index: 1000;
     justify-content: center;
-    align-items: flex-start;
-    padding: 40px 20px;
+    align-items: center;
+    padding: 20px;
     box-sizing: border-box;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 /* ===== Card Detalles - Estilos con Grid ===== */
 .card__detalles {
     width: 90%;
+    max-height: 90vh;
     margin: 0 auto;
     padding: 20px;
     background: #fff;
@@ -35,13 +36,22 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: grid;
     grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
         "imagen imagen"
         "boton boton"
         "ingredientes instrucciones";
     gap: 20px;
     position: relative;
-    overflow: visible;
+    overflow-y: auto;
+    /* que no se vea la barra de scroll */
+    scrollbar-width: none; /* Firefox */
+
+    h3{
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
 }
 
 .card__detalles-imagen {
@@ -297,9 +307,24 @@
             "ingredientes"
             "instrucciones";
     }
+    .card__detalles-ingredientes,
+    .card__detalles-instrucciones {
+        padding: 10px;
+}
+
+.contador-personas {
+    height: 38px;
+    width: 100px;
+
+}
+.contador-btn:hover {
+    font-size: 1.5rem;
+    background:none;
 }
 
 h3 {
     color: #333;
     margin-bottom: 10px;
 }
+}
+
