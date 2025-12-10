@@ -168,7 +168,7 @@ const bannerReceta = new BannerReceta();
 const recetas = {
     'Paella de Mariscos Auténtica': {
         nombre: 'Paella de Mariscos Auténtica',
-        imagen: 'img/paella-mariscos.avif',
+        imagen: 'img/paella.avif',
         categoria: 'ALMUERZO',
         ingredientes: [
             '300g de arroz bomba',
@@ -193,7 +193,7 @@ const recetas = {
     },
     'Tacos al Pastor': {
         nombre: 'Tacos al Pastor',
-        imagen: 'img/tacos-al-pastor.avif',
+        imagen: 'img/tacos.avif',
         categoria: 'CENA',
         ingredientes: [
             '500g de carne de cerdo',
@@ -213,7 +213,7 @@ const recetas = {
     },
     'Tiramisú Clásico Italiano': {
         nombre: 'Tiramisú Clásico Italiano',
-        imagen: 'img/tiramisu-clasico.avif',
+        imagen: 'img/tiramisu.avif',
         categoria: 'POSTRE',
         ingredientes: [
             '250g de queso mascarpone',
@@ -233,7 +233,7 @@ const recetas = {
     },
     'Gazpacho Andaluz Tradicional': {
         nombre: 'Gazpacho Andaluz Tradicional',
-        imagen: 'img/gazpacho-andaluz.avif',
+        imagen: 'img/gazpacho.avif',
         categoria: 'ENTRANTE',
         ingredientes: [
             '1kg de tomates maduros',
@@ -254,7 +254,7 @@ const recetas = {
     },
     'Salmón Grilado con Espárragos': {
         nombre: 'Salmón Grilado con Espárragos',
-        imagen: 'img/salmon-grilado.avif',
+        imagen: 'img/salmon.avif',
         categoria: 'CENA',
         ingredientes: [
             '2 filetes de salmón',
@@ -273,7 +273,7 @@ const recetas = {
     },
     'Tostada de Aguacate y Huevo Poché': {
         nombre: 'Tostada de Aguacate y Huevo Poché',
-        imagen: 'img/tostada-aguacate-huevo.avif',
+        imagen: 'img/tostada.avif',
         categoria: 'DESAYUNO',
         ingredientes: [
             '2 rebanadas de pan integral',
