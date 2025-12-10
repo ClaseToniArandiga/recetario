@@ -1,5 +1,6 @@
 
-
+@import url('reset.css');
+@import url('normalize.css');
 /* =====================================================
  * IMPORTANTE: La clase "receta-card" es necesaria para
  * que funcione el click que abre el banner de detalles.
@@ -18,8 +19,8 @@
     background: rgba(0, 0, 0, 0.7);
     z-index: 1000;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
+    align-items: flex-start;
+    padding: 40px 20px;
     box-sizing: border-box;
     overflow-y: auto;
 }
@@ -27,7 +28,7 @@
 /* ===== Card Detalles - Estilos con Grid ===== */
 .card__detalles {
     max-width: 900px;
-    margin: 20px auto;
+    margin: 0 auto;
     padding: 20px;
     background: #fff;
     border-radius: 8px;
@@ -40,6 +41,7 @@
         "ingredientes instrucciones";
     gap: 20px;
     position: relative;
+    overflow: visible;
 }
 
 .card__detalles-imagen {
@@ -62,8 +64,10 @@
 }
 
 .btn__cerrar--detalles {
-    grid-area: boton;
-    justify-self: start;
+    grid-area: imagen;
+    justify-self: end;
+    height: 50px;
+    margin:  10px 10px 0 0;
     padding: 8px 16px;
     background: #e74c3c;
     color: #fff;
@@ -173,6 +177,7 @@
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    user-select: none;
 }
 
 .card__calorico h3 {
