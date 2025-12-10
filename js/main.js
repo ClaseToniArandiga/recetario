@@ -7,12 +7,12 @@ class BannerReceta {
 
     generarHTML(receta) {
         return `
-            <div id="card-detalles" class="card__detalles">
+            <article id="card-detalles" class="card__detalles">
                 <img src="${receta.imagen}" alt="${receta.nombre}" class="card__detalles-imagen" />
                 <button class="btn__cerrar--detalles" id="btn-cerrar-detalles">✕</button>
                 <h2 class="titulo__receta" id="titulo-receta">${receta.nombre}</h2>
                 
-                <div id="div-ingrediente" class="card__detalles-ingredientes">
+                <section id="div-ingrediente" class="card__detalles-ingredientes">
                     <div class="ingredientes__header">
                         <h3>Ingredientes</h3>
                         <div class="contador-personas">
@@ -25,15 +25,15 @@ class BannerReceta {
                         </div>
                     </div>
                     <ul id="ingredientes-lista" class="ingredientes__lista"></ul>
-                    <div class="card__calorico"></div>
-                </div>
+                    <aside class="card__calorico"></aside>
+                </section>
                 
-                <div class="card__detalles-instrucciones">
+                <section class="card__detalles-instrucciones">
                     <h3>Instrucciones</h3>
                     <!-- Aquí irán las instrucciones (pendiente/Dani) -->
                     <ol class="instrucciones__lista"></ol>
-                </div>
-            </div>
+                </section>
+            </article>
         `;
     }
 
