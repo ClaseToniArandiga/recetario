@@ -10,7 +10,10 @@ class BannerReceta {
             <article id="card-detalles" class="card__detalles">
                 <img src="${receta.imagen}" alt="${receta.nombre}" class="card__detalles-imagen" />
                 <button class="btn__cerrar--detalles" id="btn-cerrar-detalles">✕</button>
-                <h2 class="titulo__receta" id="titulo-receta">${receta.nombre}</h2>
+                <div class="titulo-container">
+                    <span class="etiqueta-categoria">${receta.categoria}</span>
+                    <h2 class="titulo__receta" id="titulo-receta">${receta.nombre}</h2>
+                </div>
                 
                 <section id="div-ingrediente" class="card__detalles-ingredientes">
                     <div class="ingredientes__header">
@@ -166,6 +169,7 @@ const recetas = {
     'Paella de Mariscos Auténtica': {
         nombre: 'Paella de Mariscos Auténtica',
         imagen: 'img/paella-mariscos.avif',
+        categoria: 'ALMUERZO',
         ingredientes: [
             '300g de arroz bomba',
             '150g de camarones',
@@ -190,6 +194,7 @@ const recetas = {
     'Tacos al Pastor': {
         nombre: 'Tacos al Pastor',
         imagen: 'img/tacos-al-pastor.avif',
+        categoria: 'CENA',
         ingredientes: [
             '500g de carne de cerdo',
             '100g de piña',
@@ -209,6 +214,7 @@ const recetas = {
     'Tiramisú Clásico Italiano': {
         nombre: 'Tiramisú Clásico Italiano',
         imagen: 'img/tiramisu-clasico.avif',
+        categoria: 'POSTRE',
         ingredientes: [
             '250g de queso mascarpone',
             '200g de bizcochos de soletilla',
@@ -228,6 +234,7 @@ const recetas = {
     'Gazpacho Andaluz Tradicional': {
         nombre: 'Gazpacho Andaluz Tradicional',
         imagen: 'img/gazpacho-andaluz.avif',
+        categoria: 'ENTRANTE',
         ingredientes: [
             '1kg de tomates maduros',
             '1 pepino',
@@ -248,6 +255,7 @@ const recetas = {
     'Salmón Grilado con Espárragos': {
         nombre: 'Salmón Grilado con Espárragos',
         imagen: 'img/salmon-grilado.avif',
+        categoria: 'CENA',
         ingredientes: [
             '2 filetes de salmón',
             '200g de espárragos verdes',
@@ -266,6 +274,7 @@ const recetas = {
     'Tostada de Aguacate y Huevo Poché': {
         nombre: 'Tostada de Aguacate y Huevo Poché',
         imagen: 'img/tostada-aguacate-huevo.avif',
+        categoria: 'DESAYUNO',
         ingredientes: [
             '2 rebanadas de pan integral',
             '1 aguacate maduro',
