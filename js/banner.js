@@ -46,14 +46,14 @@ function obtenerImagenAleatoria() {
 
 // Función para cambiar la imagen, título y subtítulo del banner
 export function cambiarImagenBanner() {
-  const bannerImage = document.querySelector(".banner__image");
-  const bannerTitulo = document.querySelector(".banner__title");
-  const bannerDescripcion = document.querySelector(".banner__description");
+  const bannerImagen = document.getElementById("bannerImage");
+  const bannerTitulo = document.getElementById("bannerTitle");
+  const bannerDescripcion = document.getElementById("bannerDescription");
 
-  if (bannerImage && bannerTitulo && bannerDescripcion) {
+  if (bannerImagen && bannerTitulo && bannerDescripcion) {
     const nuevaImagen = obtenerImagenAleatoria();
-    bannerImage.src = nuevaImagen.imagen;
-    bannerImage.alt = nuevaImagen.titulo;
+    bannerImagen.src = nuevaImagen.imagen;
+    bannerImagen.alt = nuevaImagen.titulo;
     bannerTitulo.textContent = nuevaImagen.titulo;
     bannerDescripcion.textContent = nuevaImagen.subtitulo;
   }
