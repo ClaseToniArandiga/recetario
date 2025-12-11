@@ -100,6 +100,21 @@ class BannerReceta {
             li.appendChild(label);
             lista.appendChild(li);
         });
+        // local storage para mantener el estado de los checkboxes
+        const checkboxes = lista.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            const savedState = localStorage.getItem(checkbox.id);
+            if (savedState === 'checked') {
+                checkbox.checked = true;
+            }
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    localStorage.setItem(checkbox.id, 'checked');
+                } else {
+                    localStorage.removeItem(checkbox.id);
+                }
+            });
+        });
     }
 
     multiplicarCantidad(ingrediente, multiplicador) {
