@@ -1,8 +1,3 @@
-// importar script de cookies
-import { mostrarModalCookies, desbloquearPagina } from './cookies.js';
-
-console.log('[MAIN.JS] Módulo cargado');
-
 // 1. Encuentra el botón por su id
 
 const btnMenu = document.getElementById('btn-menu');

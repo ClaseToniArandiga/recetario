@@ -115,144 +115,149 @@
         .##....##.##.....##.##...###....##....##.....##..##..##...###.##.......##....##.
         ..######...#######..##....##....##....##.....##.####.##....##.########.##.....##
         -->
-    <div class="container">
-        <!-- Logo, menu de hamburguesa -->
-        <header class="header">
-            <!-- Logo -->
-            <a href="index.html" class="header__logo">
-                <h1 class="header__logo-text">LOGO</h1>
-            </a>
+        <div class="container">
+            <!-- Logo, menu de hamburguesa -->
+            <header class="header">
+                <!-- Logo -->
+                <a href="index.html" class="header__logo">
+                    <h1 class="header__logo-text">LOGO</h1>
+                </a>
 
-            <!-- para Desktop -->
-            <section class="header__desktop">
-                <ul class="header__menuhtml">
-                    <li class="header__item">
-                        <a class="header__link" href="#">Servicios</a>
-                    </li>
-                    <li class="header__item">
-                        <a class="header__link" href="#">Galeria</a>
-                    </li>
-                    <li class="header__item">
-                        <a class="header__link" href="#">Contacto</a>
-                    </li>
-                </ul>
-                <!-- Redes la podéis mover al footer si es necesario -->
-                <ul class="redes">
-                    <li class="redes__facebook">Facebook</li>
-                    <li class="redes__linkedin">Linkedin</li>
-                </ul>
-                <!-- <ul class="idiomas">
+                <!-- para Desktop -->
+                <section class="header__desktop">
+                    <ul class="header__menuhtml">
+                        <li class="header__item">
+                            <a class="header__link" href="#">Servicios</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link" href="#">Galeria</a>
+                        </li>
+                        <li class="header__item">
+                            <a class="header__link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                    <!-- Redes la podéis mover al footer si es necesario -->
+                    <ul class="redes">
+                        <li class="redes__facebook">Facebook</li>
+                        <li class="redes__linkedin">Linkedin</li>
+                    </ul>
+                    <!-- <ul class="idiomas">
                         <li>Español</li>
                         <li>Inglés</li>
                     </ul> -->
             </section>
 
-            <!-- Menu de hamburguesa, clic con JS -->
-            <img class="header__menu" src="img/svg/menu.svg" alt="icono menu" id="btn-menu" />
-            <!-- menu desplegable -->
-        </header>
-        <nav class="desplegable" style="display: none;" id="nav">
-            <ul class="desplegable__list">
-                <li class="desplegable__item">
-                    <a class="desplegable__link" href="#">Item 1</a>
-                </li>
-                <li class="desplegable__item">
-                    <a class="desplegable__link" href="#">Item 2</a>
-                </li>
-                <li class="desplegable__item">
-                    <a class="desplegable__link" href="#">Item 3</a>
-                </li>
-                <li class="desplegable__item">
-                    <a class="desplegable__link" href="#">Item 4</a>
-                </li>
-            </ul>
-        </nav>
+                <!-- Menu de hamburguesa, clic con JS -->
+                <img 
+                    class="header__menu"
+                    src="img/svg/menu.svg"
+                    alt="icono menu"
+                    id="btn-menu"
+                />
+                <!-- menu desplegable -->
+            </header>
+            <nav class="desplegable" style="display: none;" id="nav">
+                <ul class="desplegable__list">
+                    <li class="desplegable__item">
+                        <a class="desplegable__link" href="#">Item 1</a>
+                    </li>
+                    <li class="desplegable__item">
+                        <a class="desplegable__link" href="#">Item 2</a>
+                    </li>
+                    <li class="desplegable__item">
+                        <a class="desplegable__link" href="#">Item 3</a>
+                    </li>
+                    <li class="desplegable__item">
+                        <a class="desplegable__link" href="#">Item 4</a>
+                    </li>
+                </ul>
+            </nav>
 
-        <!-- Contenido principal -->
-        <main class="main"></main>
+            <!-- Contenido principal -->
+            <main class="main"></main>
 
-        <footer class="footer">
-            <section class="footer__container">
-                <!-- Información de la empresa -->
-                <section class="footer__section footer__company">
-                    <h2 class="footer__title">Nombre Empresa</h2>
-                    <address class="footer__address">
-                        <h3>Calle Principal, 123</h3>
-                        <h3>Ciudad, CP 12345</h3>
-                        <h3>Tel: <a href="tel:+34900000000" class="footer__link">900 000 000</a></h3>
-                        <h3>Email: <a href="mailto:info@empresa.com" class="footer__link">info@empresa.com</a></h3>
-                    </address>
+            <footer class="footer">
+                <section class="footer__container">
+                    <!-- Información de la empresa -->
+                    <section class="footer__section footer__company">
+                        <h2 class="footer__title">Nombre Empresa</h2>
+                        <address class="footer__address">
+                            <h3>Calle Principal, 123</h3>
+                            <h3>Ciudad, CP 12345</h3>
+                            <h3>Tel: <a href="tel:+34900000000" class="footer__link">900 000 000</a></h3>
+                            <h3>Email: <a href="mailto:info@empresa.com" class="footer__link">info@empresa.com</a></h3>
+                        </address>
+                    </section>
+
+                    <!-- Enlaces de navegación -->
+                    <nav class="footer__section footer__nav">
+                        <h4 class="footer__title">Navegación</h4>
+                        <ul class="footer__nav-list">
+                            <li class="footer__nav-item">
+                                <a href="#" class="footer__nav-link">Servicios</a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="#" class="footer__nav-link">Galería</a>
+                            </li>
+                            <li class="footer__nav-item">
+                                <a href="#" class="footer__nav-link">Contacto</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- Legal y privacidad -->
+                    <section class="footer__section footer__legal">
+                        <h4 class="footer__title">Legal</h4>
+                        <ul class="footer__legal-list">
+                            <li class="footer__legal-item">
+                                <a href="#" class="footer__link">Aviso Legal</a>
+                            </li>
+                            <li class="footer__legal-item">
+                                <a href="#" class="footer__link">Política de Privacidad</a>
+                            </li>
+                            <li class="footer__legal-item">
+                                <a href="#" class="footer__link">Política de Cookies</a>
+                            </li>
+                            <li class="footer__legal-item">
+                                <a href="#" class="footer__link">Términos y Condiciones</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- Redes sociales -->
+                    <section class="footer__section footer__social">
+                        <h4 class="footer__title">Síguenos</h4>
+                        <ul class="footer__social-list">
+                            <li class="footer__social-item">
+                                <a href="#" class="footer__social-link" aria-label="Facebook">
+                                    Facebook
+                                </a>
+                            </li>
+                            <li class="footer__social-item">
+                                <a href="#" class="footer__social-link" aria-label="LinkedIn">
+                                    LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
                 </section>
 
-                <!-- Enlaces de navegación -->
-                <nav class="footer__section footer__nav">
-                    <h4 class="footer__title">Navegación</h4>
-                    <ul class="footer__nav-list">
-                        <li class="footer__nav-item">
-                            <a href="#" class="footer__nav-link">Servicios</a>
-                        </li>
-                        <li class="footer__nav-item">
-                            <a href="#" class="footer__nav-link">Galería</a>
-                        </li>
-                        <li class="footer__nav-item">
-                            <a href="#" class="footer__nav-link">Contacto</a>
-                        </li>
-                    </ul>
-                </nav>
-
-                <!-- Legal y privacidad -->
-                <section class="footer__section footer__legal">
-                    <h4 class="footer__title">Legal</h4>
-                    <ul class="footer__legal-list">
-                        <li class="footer__legal-item">
-                            <a href="#" class="footer__link">Aviso Legal</a>
-                        </li>
-                        <li class="footer__legal-item">
-                            <a href="#" class="footer__link">Política de Privacidad</a>
-                        </li>
-                        <li class="footer__legal-item">
-                            <a href="#" class="footer__link">Política de Cookies</a>
-                        </li>
-                        <li class="footer__legal-item">
-                            <a href="#" class="footer__link">Términos y Condiciones</a>
-                        </li>
-                    </ul>
+                <!-- Copyright y cookies banner -->
+                <section class="footer__bottom">
+                    <article class="footer__copy">
+                        <p>&copy; 2025 Nombre Empresa. Todos los derechos reservados.</p>
+                    </article>
+                    <article class="footer__cookies-banner" id="cookies-banner">
+                        <p class="footer__cookies-text">
+                            Utilizamos cookies propias.
+                            <a href="#" class="footer__link">Más información</a>
+                        </p>
+                    </article>
                 </section>
+            </footer>
+        </div>
 
-                <!-- Redes sociales -->
-                <section class="footer__section footer__social">
-                    <h4 class="footer__title">Síguenos</h4>
-                    <ul class="footer__social-list">
-                        <li class="footer__social-item">
-                            <a href="#" class="footer__social-link" aria-label="Facebook">
-                                Facebook
-                            </a>
-                        </li>
-                        <li class="footer__social-item">
-                            <a href="#" class="footer__social-link" aria-label="LinkedIn">
-                                LinkedIn
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-            </section>
-
-            <!-- Copyright y cookies banner -->
-            <section class="footer__bottom">
-                <article class="footer__copy">
-                    <p>&copy; 2025 Nombre Empresa. Todos los derechos reservados.</p>
-                </article>
-                <article class="footer__cookies-banner" id="cookies-banner">
-                    <p class="footer__cookies-text">
-                        Utilizamos cookies propias.
-                        <a href="#" class="footer__link">Más información</a>
-                    </p>
-                </article>
-            </section>
-        </footer>
-    </div>
-
-    <script type="module" src="js/main.js"></script>
-</body>
-
+        <!-- Un código en JavaScript, que nos ayuda hacer un clic -->
+        <script src="js/main.js"></script>
+    </body>
 </html>

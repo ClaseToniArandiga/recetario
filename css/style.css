@@ -1,266 +1,394 @@
 /* IMPORT */
-@import url('normalize.css');
-@import url('reset.css');
+@import url("normalize.css");
+@import url("reset.css");
 /* @import url('cookies.css'); */
-
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap");
 
 /* =================================
    Variables y Tema (CSS 2025)
    ================================= */
 :root {
-    /* Colores con modo oscuro automático */
-    --color-bg: light-dark(#f5f5f5);
-    --color-text: light-dark(#121212);
+  --color-bg: light-dark(#f5f5f5);
+  --color-text: light-dark(#121212);
+  --color-text-white: #ffffff;
+  --color-primary: #d4812a;
 
-    /* Tipografía moderna */
-    --font-family-system: system-ui, "Segoe UI", Roboto, sans-serif;
+  /* Tipografía moderna */
+  --font-family-system: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
 
-    /* Espaciado y Tamaños */
-    --space-sm: 10px;
-    --space-md: 20px;
-    --space-bg: 40px;
-    --font-size-lg: 2rem;
-    --header-height: 5dvh;
-    --nav-height: 95dvh;
+  /* Espaciado y Tamaños */
+  --space-sm: 10px;
+  --space-md: 20px;
+  --space-bg: 40px;
+  --font-size-lg: 2rem;
+  --header-height: 5dvh;
+  --nav-height: 95dvh;
 
-    --bordes-redondeados: var(--space-md);
+  --bordes-redondeados: var(--space-md);
 }
-
-
 
 /* =================================
-   Reset y Estilos Base
+   Estilo general
    ================================= */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container{
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
 body {
-    font-family: var(--font-family-system);
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    padding: var(--space-md);
-    /* Habilita el modo oscuro automático del navegador */
-    color-scheme: light dark;
+  font-family: var(--font-family-system);
+  background-color: var(--color-bg);
+}
+
+.container {
+  margin: 0 auto;
 }
 
 /* =================================
-   Layout y Componentes
-   ================================= */
+HEADER
+================================= */
+
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-md);
-    /* Usando propiedades lógicas para el tamaño */
-    block-size: var(--header-height);
+  width: 100%;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.header__logo {
-    text-decoration: none;
-    color: var(--color-text);
+.header {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-sm) var(--space-sm) var(--space-sm);
 }
 
+.header__logo-img {
+  width: 160px;
+}
+
+/* Header - Desktop (navegación + buscador) */
 .header__desktop {
-    display: none;
+  display: none;
 }
+
 @media screen and (min-width: 600px) {
-    .header__desktop {
-        display: flex;
-        gap: var(--space-md);
-    }
-    .header__desktop ul {
-        display: flex;
-        gap: var(--space-md);
-        list-style: none;
-    }
+  .header__desktop {
+    display: flex;
+    align-items: center;
+    gap: var(--space-bg);
+  }
+}
+
+/* Header - Menú HTML (lista de navegación) */
+.header__menuhtml {
+  display: flex;
+  gap: var(--space-md);
+}
+
+/* Header - Link del menú */
+.header__link {
+  font-size: 0.9rem;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+/* Header - Formulario de búsqueda */
+.header__form-buscar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f0f0f0;
+  border-radius: var(--bordes-redondeados);
+  padding: 0.5rem 1rem;
+}
+
+.header__form-lupa {
+  width: 14px;
+  height: 14px;
+  filter: invert(35%) sepia(10%) saturate(500%);
+}
+
+.header__input-buscar {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.9rem;
+  min-width: 150px;
+}
+
+.header__input-buscar::placeholder {
+  color: #999;
+}
+
+/* Header - Menú hamburguesa (mobile) */
+.header__menu {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  .header__menu {
+    display: none;
+  }
 }
 
 .main__text {
-    color: var(--color-text);
-}
-
-@media screen and (min-width: 600px) {
-    .header__menu {
-        display: none;
-    }
+  color: var(--color-text);
+  line-height: 1.5;
 }
 
 /* =================================
-   Navegación con Nesting Nativo
+   Banner
+   ================================= */
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Banner - Imagen de fondo */
+.banner__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Overlay oscuro para mejor legibilidad */
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+/* Banner - Subtítulo */
+.banner__subtitle {
+  position: relative;
+  z-index: 1;
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: var(--space-sm);
+}
+
+/* Banner - Título principal */
+.banner__title {
+  position: relative;
+  z-index: 1;
+  color: var(--color-text-white);
+  font-family: "Georgia", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+  max-width: 600px;
+  padding: 0 var(--space-md);
+}
+
+/* Banner - Descripción */
+.banner__description {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-bottom: var(--space-md);
+  padding: 0 var(--space-md);
+}
+
+/* Banner - Botón Ver Receta */
+.banner a {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #d4812a;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.cuchilloCuchara {
+  width: 20px;
+  height: 20px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)
+    contrast(103%);
+}
+
+/* Responsive para el banner */
+@media screen and (max-width: 600px) {
+  .banner {
+    height: 400px;
+  }
+
+  .banner__title {
+    font-size: 2rem;
+  }
+
+  .banner__description {
+    font-size: 0.875rem;
+  }
+}
+
+/* =================================
+   DESPLEGABLE NAV SMARTPHONE
    ================================= */
 .desplegable {
-    block-size: var(--nav-height);
-    /* Usando propiedades lógicas para el padding */
-    padding-inline-start: 20%;
+  block-size: var(--nav-height);
+  /* Usando propiedades lógicas para el padding */
+  padding-inline-start: 20%;
 
+  & ul {
+    block-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+  }
 
-    & ul {
-        block-size: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        list-style: none;
-    }
+  & li {
+    /* Usando propiedades lógicas para el margen */
+    margin-block-end: var(--space-sm);
+  }
 
-    & li {
-        /* Usando propiedades lógicas para el margen */
-        margin-block-end: var(--space-sm);
-    }
-
-    & a {
-        text-decoration: none;
-        color: var(--color-text);
-        font-size: var(--font-size-lg);
-    }
+  & a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: var(--font-size-lg);
+  }
 }
 
 #nav {
-    display: none;
+  display: none;
 }
 @media screen and (min-width: 600px) {
-    #nav {
-        display: block;
-    }
+  #nav {
+    display: block;
+  }
 }
 
-.main__text {
-    margin-top: var(--space-md);
-    line-height: 1.5;
-}
+/* =================================
+   MAIN Styles
+   ================================= */
 
 /* =================================
    Footer Styles
    ================================= */
+
+/* Footer - Bloque */
 .footer {
-    margin-top: var(--space-bg);
-    padding: var(--space-bg) 0;
-    border-top: 1px solid var(--color-text);
+  background-color: #1a1612;
+  padding: var(--space-bg) var(--space-md);
 }
 
-.footer__container {
-    display: grid;
-    gap: var(--space-bg);
-    padding: 0 var(--space-md);
+/* Footer - Sección Únete */
+.footer__unete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-bg) 0;
 }
 
-@media (min-width: 768px) {
-    .footer__container {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-.footer__section {
-    margin-bottom: var(--space-md);
+/* Footer - Icono de email */
+.iconoEmail {
+  width: 50px;
+  height: 50px;
+  margin-bottom: var(--space-md);
+  filter: invert(55%) sepia(80%) saturate(500%) hue-rotate(350deg);
 }
 
 .footer__title {
-    font-size: 1.2rem;
-    margin-bottom: var(--space-md);
-    color: var(--color-text);
+  font-family: "Georgia", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color-text-white);
+  margin-bottom: var(--space-md);
 }
 
-.footer__address p {
-    margin-bottom: var(--space-sm);
+.footer__description {
+  color: #b3b3b3;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
 }
 
-.footer__nav-list,
-.footer__legal-list,
-.footer__social-list {
-    list-style: none;
-    padding: 0;
+.footer__form {
+  display: flex;
+  gap: var(--space-sm);
+  width: 100%;
+  max-width: 450px;
 }
 
-.footer__nav-item,
-.footer__legal-item,
-.footer__social-item {
-    margin-bottom: var(--space-sm);
+/* Footer - Input de email */
+.footer__input {
+  flex: 1;
+  padding: 0.875rem 1.25rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+  outline: none;
 }
 
-.footer__link,
-.footer__nav-link,
-.footer__social-link {
-    color: var(--color-text);
-    text-decoration: none;
-    transition: opacity 0.3s ease;
+.footer__input::placeholder {
+  color: #999;
 }
 
-.footer__link:hover,
-.footer__nav-link:hover,
-.footer__social-link:hover {
-    opacity: 0.7;
+/* Footer - Botón Suscribir */
+.footer__button {
+  padding: 0.875rem 1.5rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.footer__bottom {
-    margin-top: var(--space-bg);
-    padding: var(--space-md);
-    border-top: 1px solid var(--color-text);
+.footer__button:hover {
+  background-color: #b86d1f;
+  transform: scale(1.05);
 }
 
-.footer__copy {
-    text-align: center;
-    margin-bottom: var(--space-md);
+/* Footer - Responsive */
+@media screen and (max-width: 500px) {
+  .footer__form {
+    flex-direction: column;
+  }
+
+  .footer__input,
+  .footer__button {
+    width: 100%;
+  }
+
+  .footer__title {
+    font-size: 1.5rem;
+  }
 }
-
-.footer__cookies-banner {
-    background-color: var(--color-text);
-    color: var(--color-bg);
-    padding: var(--space-md);
-    border-radius: var(--bordes-redondeados);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--space-md);
-}
-
-.footer__cookies-text {
-    margin: 0;
-}
-
-.footer__cookies-text .footer__link {
-    color: var(--color-bg);
-    text-decoration: underline;
-}
-
-.footer__cookies-button {
-    padding: var(--space-sm) var(--space-md);
-    border: 2px solid var(--color-bg);
-    background: none;
-    color: var(--color-bg);
-    border-radius: var(--bordes-redondeados);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.footer__cookies-button:hover {
-    background: var(--color-bg);
-    color: var(--color-text);
-}
-
-/* Responsive adjustments for mobile */
-@media (max-width: 767px) {
-    .footer__container {
-        grid-template-columns: 1fr;
-    }
-
-    .footer__cookies-banner {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer__cookies-text {
-        margin-bottom: var(--space-md);
-    }
-}
-
-
