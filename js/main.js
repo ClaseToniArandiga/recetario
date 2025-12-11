@@ -1,4 +1,11 @@
+// IMPORTACIONES DE OTROS MÓDULOS DE JS
+import { cambiarImagenBanner } from './banner.js';
+import { mostrarModalCookies, desbloquearPagina } from './cookies.js';
+
 // 1. Encuentra el botón por su id
+
+// Cambiar imagen del banner cuando se carga la página
+window.addEventListener("load", cambiarImagenBanner);
 
 const btnMenu = document.getElementById('btn-menu');
 
@@ -18,7 +25,6 @@ if (btnMenu) {
         }
     };
 }
-
 
 // Función para inicializar cookies
 function inicializarCookies() {
