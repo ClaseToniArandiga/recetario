@@ -42,7 +42,10 @@ class BannerReceta {
 
     mostrar(receta) {
         this.recetaActual = receta;
-        this.personasActuales = 1;
+        
+        // Cargar cantidad de personas desde localStorage (único por receta)
+        const personasGuardadas = localStorage.getItem(`${receta.nombre}-personas-cantidad`);
+        this.personasActuales = personasGuardadas ? parseInt(personasGuardadas) : 1;
         
         // Generar el HTML del banner
         this.overlay.innerHTML = this.generarHTML(receta);
@@ -52,6 +55,9 @@ class BannerReceta {
         // Actualizar ingredientes y calorías
         this.actualizarIngredientes();
         this.actualizarCalorias();
+        
+        // Actualizar el contador en el HTML
+        document.getElementById('personas-cantidad').textContent = this.personasActuales;
         
         // Añadir event listeners
         this.addEventListeners();
@@ -74,10 +80,13 @@ class BannerReceta {
         document.getElementById('btn-sumar').addEventListener('click', () => {
             this.cambiarPersonas(1);
         });
+
         
         document.getElementById('btn-restar').addEventListener('click', () => {
             this.cambiarPersonas(-1);
         });
+
+        
     }
 
     actualizarIngredientes() {
@@ -100,18 +109,20 @@ class BannerReceta {
             li.appendChild(label);
             lista.appendChild(li);
         });
-        // local storage para mantener el estado de los checkboxes
+        // local storage para mantener el estado de los checkboxes (único por receta)
+        const nombreReceta = this.recetaActual.nombre;
         const checkboxes = lista.querySelectorAll('input[type="checkbox"]');
         checkboxes.forEach(checkbox => {
-            const savedState = localStorage.getItem(checkbox.id);
+            const storageKey = `${nombreReceta}-${checkbox.id}`;
+            const savedState = localStorage.getItem(storageKey);
             if (savedState === 'checked') {
                 checkbox.checked = true;
             }
             checkbox.addEventListener('change', () => {
                 if (checkbox.checked) {
-                    localStorage.setItem(checkbox.id, 'checked');
+                    localStorage.setItem(storageKey, 'checked');
                 } else {
-                    localStorage.removeItem(checkbox.id);
+                    localStorage.removeItem(storageKey);
                 }
             });
         });
@@ -132,6 +143,9 @@ class BannerReceta {
             document.getElementById('personas-cantidad').textContent = nuevaCantidad;
             this.actualizarIngredientes();
             this.actualizarCalorias();
+            
+            // Guardar cantidad de personas en localStorage (único por receta)
+            localStorage.setItem(`${this.recetaActual.nombre}-personas-cantidad`, nuevaCantidad);
         }
     }
 
