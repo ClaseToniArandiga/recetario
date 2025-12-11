@@ -75,7 +75,7 @@ section.cookie-preferences {
 .cookies-form {
     position: relative;
     background: var(--bg-card);
-    border-radius: 24px;
+    border-radius: 24px 0 0 24px;
     max-height: 85vh;
     width: 100%;
     max-width: 500px;
@@ -118,21 +118,21 @@ section.cookie-preferences {
 
 /* Firefox */
 .cookies-form {
-    scrollbar-width: none;
-    scrollbar-color: #667eea #e5e7eb;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) var(--bg-card);
 }
 
 /* Chrome, Edge, Safari */
-/* .cookies-form::-webkit-scrollbar {
+.cookies-form::-webkit-scrollbar {
     width: 10px;
-} */
+} 
 
 .cookies-form::-webkit-scrollbar-track {
     background: #f1f5f9;
-    /* border-radius: 24px; */
+    border-radius: 24px;
 }
-
-.cookies-form::-webkit-scrollbar-thumb {
+ 
+ .cookies-form::-webkit-scrollbar-thumb {
     background: var(--primary-gradient);
     border-radius: 24px;
     transition: var(--transition);
@@ -140,7 +140,7 @@ section.cookie-preferences {
 
 .cookies-form::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #b8691e 0%, #d4812a 100%);
-}
+} 
 
 /* ==============================================
    HEADER DE COOKIES
@@ -225,8 +225,8 @@ section.cookie-preferences {
 .radio-control input[type="radio"] {
     appearance: none;
     -webkit-appearance: none;
-    width: 22px;
-    height: 22px;
+    width: 11px;
+    height: 11px;
     border: 2px solid #cbd5e1;
     border-radius: 50%;
     outline: none;
@@ -276,7 +276,7 @@ section.cookie-preferences {
     padding: 1.5rem 2rem;
 }
 
-button {
+.cookies-form button {
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -289,7 +289,7 @@ button {
     width: 100%;
 }
 
-button::before {
+.cookies-form button::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -302,8 +302,8 @@ button::before {
     transition: width 0.6s, height 0.6s;
 }
 
-button:hover::before {
-    width: 300px;
+.cookies-form button:hover::before {
+    width: 500px;
     height: 300px;
 }
 
@@ -379,9 +379,9 @@ button:hover::before {
     color: var(--text-primary);
 }
 
-input {
-    padding: 1rem;
-}
+.cookies-form input {
+    padding: 0.5rem;
+} 
 
 /* ==============================================
    RESPONSIVE DESIGN
@@ -402,7 +402,7 @@ input {
         gap: 0.75rem;
     }
 
-    button {
+    .cookies-form button {
         padding: 0.875rem 1.5rem;
         font-size: 0.95rem;
     }
@@ -471,7 +471,7 @@ input {
         min-width: auto;
     }
 
-    button {
+    .cookies-form button {
         padding: 0.875rem 1.25rem;
         font-size: 0.9rem;
     }
@@ -500,7 +500,7 @@ input {
         font-size: 0.875rem;
     }
 
-    button {
+    .cookies-form button {
         padding: 0.75rem 1rem;
         font-size: 0.875rem;
     }
