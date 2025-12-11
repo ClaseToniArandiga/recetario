@@ -1,5 +1,7 @@
 // IMPORTACIONES DE OTROS MÓDULOS DE JS
 import { cambiarImagenBanner } from './banner.js';
+import { mostrarModalCookies, desbloquearPagina } from './cookies.js';
+
 
 // Cambiar imagen del banner cuando se carga la página
 window.addEventListener("load", cambiarImagenBanner);
@@ -24,3 +26,24 @@ btnMenu.onclick = () => {
         btnMenu.src = 'img/svg/menuX.svg';
     }
 };
+
+
+// Función para inicializar cookies
+function inicializarCookies() {
+    console.log('[MAIN.JS] inicializarCookies() ejecutándose');
+    // Verificar si el usuario ya aceptó las cookies
+    const cookiesAceptadas = localStorage.getItem('cookiesAceptadas');
+    console.log('[MAIN.JS] cookiesAceptadas:', cookiesAceptadas);
+
+    if (!cookiesAceptadas) {
+        // Si no ha aceptado, mostrar el modal y bloquear la página
+        console.log('[MAIN.JS] Llamando a mostrarModalCookies()');
+        mostrarModalCookies();
+    } else {
+        // Si ya aceptó, permitir el acceso normal
+        console.log('[MAIN.JS] Llamando a desbloquearPagina()');
+        desbloquearPagina();
+    }
+}
+
+inicializarCookies();
