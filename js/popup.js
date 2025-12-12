@@ -32,9 +32,9 @@ class BannerReceta {
                 </section>
                 
                 <section class="card__detalles-instrucciones">
-                    <h3>Instrucciones</h3>
-                    <!-- Aquí irán las instrucciones (pendiente/Dani) -->
-                    <ol class="instrucciones__lista"></ol>
+                    <div id="app">
+
+                    </div>
                 </section>
             </article>
         `;
@@ -55,6 +55,9 @@ class BannerReceta {
         // Actualizar ingredientes y calorías
         this.actualizarIngredientes();
         this.actualizarCalorias();
+        
+        // Renderizar instrucciones (código de Dani)
+        renderInstrucciones(receta.instrucciones);
         
         // Actualizar el contador en el HTML
         document.getElementById('personas-cantidad').textContent = this.personasActuales;
@@ -185,7 +188,7 @@ class BannerReceta {
         this.overlay.style.display = 'none';
         this.overlay.innerHTML = '';
         document.body.style.overflow = ''; // Restaurar scroll
-        document.removeEventListener('keydown', this.handleEscape.bind(this));
+        document.body.classList.remove('kitchen-mode'); // Desactivar modo cocina al cerrar
     }
 }
 
@@ -212,6 +215,15 @@ const recetas = {
             'Aceite de oliva',
             'Sal al gusto'
         ],
+        instrucciones: [
+            { id: 1, text: "Calienta el aceite en la paellera y sofríe los calamares.", timerMinutes: 5 },
+            { id: 2, text: "Añade el pimiento y el tomate rallado, sofríe bien.", timerMinutes: 5 },
+            { id: 3, text: "Incorpora el caldo caliente y el azafrán, deja hervir.", timerMinutes: 5 },
+            { id: 4, text: "Añade el arroz distribuyéndolo uniformemente.", timerMinutes: 2 },
+            { id: 5, text: "Cocina a fuego fuerte los primeros 10 minutos.", timerMinutes: 10 },
+            { id: 6, text: "Baja el fuego y añade los mariscos, cocina 10 minutos más.", timerMinutes: 10 },
+            { id: 7, text: "Deja reposar tapado con un paño antes de servir.", timerMinutes: 5 }
+        ],
         calorias: 450,
         proteinas: 30,
         grasas: 15,
@@ -232,6 +244,13 @@ const recetas = {
             'Cilantro al gusto',
             'Tortillas de maíz'
         ],
+        instrucciones: [
+            { id: 1, text: "Marina la carne con el achiote y especias durante al menos 2 horas.", timerMinutes: 120 },
+            { id: 2, text: "Corta la piña en rodajas y la cebolla en aros.", timerMinutes: 5 },
+            { id: 3, text: "Cocina la carne en una sartén o plancha a fuego alto.", timerMinutes: 15 },
+            { id: 4, text: "Asa la piña junto con la carne hasta que caramelice.", timerMinutes: 5 },
+            { id: 5, text: "Calienta las tortillas y arma los tacos con cilantro y cebolla.", timerMinutes: 3 }
+        ],
         calorias: 300,
         proteinas: 25,
         grasas: 15,
@@ -251,6 +270,15 @@ const recetas = {
             '3 huevos',
             'Café espresso',
             'Cacao en polvo'
+        ],
+        instrucciones: [
+            { id: 1, text: "Bate las yemas con la mitad del azúcar hasta que blanqueen.", timerMinutes: 5 },
+            { id: 2, text: "Incorpora el mascarpone poco a poco a las yemas batidas.", timerMinutes: 2 },
+            { id: 3, text: "Monta las claras a punto de nieve con el resto del azúcar.", timerMinutes: 5 },
+            { id: 4, text: "Mezcla suavemente las claras con la crema de mascarpone con movimientos envolventes.", timerMinutes: 3 },
+            { id: 5, text: "Moja rápidamente los bizcochos en el café (y licor) y haz una base en el molde.", timerMinutes: 5 },
+            { id: 6, text: "Cubre con la mitad de la crema. Repite: capa de bizcochos, capa de crema.", timerMinutes: 5 },
+            { id: 7, text: "Espolvorea con cacao y refrigera por al menos 4 horas.", timerMinutes: 240 }
         ],
         calorias: 450,
         proteinas: 8,
@@ -273,6 +301,14 @@ const recetas = {
             '20ml de vinagre de vino',
             'Sal al gusto'
         ],
+        instrucciones: [
+            { id: 1, text: "Lava y trocea los tomates, pepino y pimiento.", timerMinutes: 3 },
+            { id: 2, text: "Tritura todos los vegetales con el ajo en la batidora.", timerMinutes: 2 },
+            { id: 3, text: "Añade el aceite en hilo mientras bates para emulsionar.", timerMinutes: 2 },
+            { id: 4, text: "Agrega el vinagre y la sal, mezcla bien.", timerMinutes: 1 },
+            { id: 5, text: "Cuela si prefieres una textura más fina.", timerMinutes: 3 },
+            { id: 6, text: "Refrigera al menos 2 horas antes de servir.", timerMinutes: 120 }
+        ],
         calorias: 150,
         proteinas: 3,
         grasas: 10,
@@ -292,6 +328,14 @@ const recetas = {
             '1 limón',
             'Sal y pimienta al gusto'
         ],
+        instrucciones: [
+            { id: 1, text: "Precalienta la parrilla o sartén a fuego medio-alto.", timerMinutes: 3 },
+            { id: 2, text: "Sazona el salmón con sal, pimienta y un chorrito de limón.", timerMinutes: 2 },
+            { id: 3, text: "Cocina el salmón por el lado de la piel primero.", timerMinutes: 5 },
+            { id: 4, text: "Voltea y cocina hasta que esté dorado.", timerMinutes: 4 },
+            { id: 5, text: "Mientras, saltea los espárragos con aceite de oliva.", timerMinutes: 5 },
+            { id: 6, text: "Sirve el salmón sobre los espárragos con rodajas de limón.", timerMinutes: 1 }
+        ],
         calorias: 350,
         proteinas: 40,
         grasas: 20,
@@ -310,6 +354,14 @@ const recetas = {
             '2 huevos',
             'Sal y pimienta al gusto',
             'Pimentón dulce para espolvorear'
+        ],
+        instrucciones: [
+            { id: 1, text: "Pon agua a hervir con un chorrito de vinagre.", timerMinutes: 3 },
+            { id: 2, text: "Tuesta el pan hasta que esté crujiente.", timerMinutes: 3 },
+            { id: 3, text: "Machaca el aguacate con sal y pimienta.", timerMinutes: 2 },
+            { id: 4, text: "Crea un remolino en el agua y añade el huevo para pochar.", timerMinutes: 3 },
+            { id: 5, text: "Unta el aguacate sobre las tostadas.", timerMinutes: 1 },
+            { id: 6, text: "Coloca el huevo poché encima y espolvorea pimentón.", timerMinutes: 1 }
         ],
         calorias: 400,
         proteinas: 15,
@@ -371,4 +423,144 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+// CODIGO DE DANI
+// Variables y funciones para las instrucciones de recetas con temporizadores
+
+// Estado del temporizador global
+let countdownInterval = null;
+
+// Icono SVG del reloj (definido como constante para reusar)
+const clockIcon = `
+    <svg class="timer-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+    </svg>
+`;
+
+/**
+ * Función que renderiza las instrucciones de la receta.
+ * @param {Array} steps - Array de pasos de la receta
+ */
+function renderInstrucciones(steps) {
+    const app = document.getElementById('app');
+    if (!app || !steps || steps.length === 0) {
+        if (app) app.innerHTML = '<p>No hay instrucciones disponibles.</p>';
+        return;
+    }
+    
+    // Construcción del HTML
+    let htmlContent = `
+        <div class="header">
+            <h1>Instrucciones</h1>
+            <div class="toggle-container">
+                <label class="switch">
+                    <input type="checkbox" id="kitchenModeToggle">
+                    <span class="slider"></span>
+                </label>
+                <span>Modo Cocina</span>
+            </div>
+        </div>
+        <ul class="step-list">
+    `;
+
+    steps.forEach(step => {
+        let timerButton = '';
+        if (step.timerMinutes > 0) {
+            // Solo se añade el botón si tiene un temporizador asignado
+            timerButton = `
+                <button class="timer-btn" onclick="window.startCountdown(${step.timerMinutes})">
+                    ${clockIcon}
+                    Temporizador ${step.timerMinutes} min
+                </button>
+            `;
+        }
+        
+        // Aseguramos que la función startCountdown esté disponible globalmente (en el window)
+        // para que funcione con el atributo onclick en el HTML generado.
+        htmlContent += `
+            <li class="step-item">
+                <div class="step-number">${step.id}</div>
+                <div class="step-content">
+                    <div class="step-text">${step.text}</div>
+                    ${timerButton}
+                </div>
+            </li>
+        `;
+    });
+
+    htmlContent += `</ul>`;
+
+    // Inyectar HTML
+    app.innerHTML = htmlContent;
+
+    // Asignar el listener para el interruptor después de que se haya inyectado en el DOM
+    document.getElementById('kitchenModeToggle').addEventListener('change', toggleKitchenMode);
+}
+
+
+/**
+ * Habilita o deshabilita el Modo Cocina, cambiando el tamaño de la fuente.
+ */
+function toggleKitchenMode(event) {
+    const isChecked = event.target.checked;
+    // Si está marcado, añade la clase 'kitchen-mode' al body, activando el CSS de fuente grande
+    if (isChecked) {
+        document.body.classList.add('kitchen-mode');
+    } else {
+        document.body.classList.remove('kitchen-mode');
+    }
+}
+
+
+// --- LÓGICA DEL TEMPORIZADOR ---
+
+/**
+ * Inicia la cuenta atrás visible en la esquina inferior izquierda.
+ * Esta función se hace global para que sea accesible desde el onclick en el HTML.
+ */
+window.startCountdown = function(minutes) {
+    const displayContainer = document.getElementById('floating-timer');
+    const displayTime = document.getElementById('countdown-display');
+    
+    // Detener cualquier temporizador activo previo
+    if (countdownInterval) {
+        clearInterval(countdownInterval);
+    }
+
+    let totalSeconds = minutes * 60;
+    
+    // Mostrar el contenedor
+    displayContainer.style.display = 'flex';
+    updateDisplay(totalSeconds, displayTime);
+
+    // Iniciar intervalo
+    countdownInterval = setInterval(() => {
+        totalSeconds--;
+        
+        if (totalSeconds >= 0) {
+            updateDisplay(totalSeconds, displayTime);
+        } else {
+            clearInterval(countdownInterval);
+            // Mostrar mensaje de fin y ocultar
+            displayTime.textContent = "¡FIN!";
+            setTimeout(() => {
+                 displayContainer.style.display = 'none';
+            }, 1500); // 1.5 segundos de pausa antes de ocultar
+        }
+    }, 1000);
+}
+
+/**
+ * Formatea los segundos restantes a formato MM:SS y actualiza el elemento DOM.
+ */
+function updateDisplay(seconds, element) {
+    const m = Math.floor(seconds / 60);
+    const s = seconds % 60;
+    // Formatear con ceros a la izquierda
+    element.textContent = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+}
+
+
+// Las instrucciones se renderizan automáticamente cuando se abre el banner de una receta
 
